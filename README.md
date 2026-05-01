@@ -45,7 +45,7 @@ flowchart TD
 ## Mock-ups
 
 1. **Homepage**
-   ![image alt]()
+   ![Home page](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/78abdaaa1e069dddacded08bc52b7a453011e05f/Landing_Home.png)
 3. **Student Dashboard**
    ![image alt]()
 5. **View Schedule**
