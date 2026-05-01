@@ -42,3 +42,16 @@ flowchart TD
     PG --> AB
     PG --> GCP
 ```
+## Mock-ups
+
+1. **Homepage**
+   ![image alt]()
+3. **Student Dashboard**
+   ![image alt]()
+5. **View Schedule**
+   - **Tabular View**
+      ![image alt]()
+   - **List View**
+      ![image alt]()
+6. **Grades**
+   ![image alt]()
