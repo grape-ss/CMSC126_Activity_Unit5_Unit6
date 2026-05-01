@@ -47,7 +47,7 @@ flowchart TD
 1. **Homepage**
    ![Home page](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/78abdaaa1e069dddacded08bc52b7a453011e05f/Landing_Home.png)
 3. **Student Dashboard**
-   ![image alt]()
+   ![Student Dashboard](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/01d8866fbe2d7b11453a6c1617694f89e114ca47/Student%20Menu.png)
 5. **View Schedule**
    - **Tabular View**
       ![image alt]()
