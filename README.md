@@ -56,4 +56,4 @@ flowchart TD
       ![List Schedule](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/8e026e6a43efdd10a54ca72d437f7cd75877c789/View%20Schedule%20(List).png)
      
 6. **Grades**
-   ![image alt]()
+   ![Grades](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/5bc20a757840513b10328d0ee4f39af59f053ab7/Grades.png)
