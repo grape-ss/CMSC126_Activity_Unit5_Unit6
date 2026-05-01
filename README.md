@@ -29,7 +29,7 @@ flowchart TD
 
     subgraph Backup["Backup & Scale (GCP)"]
         AB[Automated Backups\nDaily snapshots to secure storage]
-        GCP[GCP Singapore\nAuto-scales VMs during peak load]
+        GCP[GCP \nAuto-scales VMs during peak load]
     end
 
     CF --> Nginx
