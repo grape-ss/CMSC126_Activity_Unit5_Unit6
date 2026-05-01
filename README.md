@@ -1,1 +1,44 @@
 # CMSC126_Activity_Unit5_Unit6
+
+
+
+
+```mermaid
+flowchart TD
+    Student[🎓 Student Browser]
+    Student --> CF
+
+    subgraph Edge["Edge Layer"]
+        CF[Cloudflare\nDDoS protection · HTTPS · Caching]
+    end
+
+    subgraph UP["UP Server"]
+        Nginx[Nginx\nReverse Proxy · Routes Traffic]
+        LB[Load Balancer\nDistributes across app instances]
+        Nginx --> LB
+    end
+
+    subgraph AppLayer["App Layer (Docker Containers)"]
+        N1[Next.js Instance 1]
+        N2[Next.js Instance 2]
+    end
+
+    subgraph DataLayer["Data Layer (Docker Containers)"]
+        Redis[Redis Cache\nFrequently accessed data]
+        PG[PostgreSQL DB\nPrimary database]
+    end
+
+    subgraph Backup["Backup & Scale"]
+        AB[Automated Backups\nDaily snapshots to secure storage]
+        GCP[GCP Singapore\nAuto-scales VMs during peak enrollment\nShuts down when traffic drops]
+    end
+
+    CF --> Nginx
+    LB --> N1
+    LB --> N2
+    N1 --> Redis
+    N2 --> Redis
+    Redis --> PG
+    PG --> AB
+    PG --> GCP
+```
