@@ -5,40 +5,38 @@
 
 ```mermaid
 flowchart TD
-    Student[🎓 Student Browser]
+    Student[Student Browser]
     Student --> CF
 
     subgraph Edge["Edge Layer"]
         CF[Cloudflare\nDDoS protection · HTTPS · Caching]
     end
 
-    subgraph UP["UP Server"]
-        Nginx[Nginx\nReverse Proxy · Routes Traffic]
+    subgraph UP["UP On-Premise Server"]
+        Nginx[Nginx\nReverse Proxy · Security · Routing]
         LB[Load Balancer\nDistributes across app instances]
         Nginx --> LB
     end
 
     subgraph AppLayer["App Layer (Docker Containers)"]
-        N1[Next.js Instance 1]
-        N2[Next.js Instance 2]
+        N1[Next.js Instance 1\nDocker container]
+        N2[Next.js Instance 2\nDocker container]
     end
 
-    subgraph DataLayer["Data Layer (Docker Containers)"]
-        Redis[Redis Cache\nFrequently accessed data]
-        PG[PostgreSQL DB\nPrimary database]
+    subgraph DataLayer["Data Layer (Docker Container)"]
+        PG[PostgreSQL DB\nPrimary database · On-premise]
     end
 
-    subgraph Backup["Backup & Scale"]
+    subgraph Backup["Backup & Scale (GCP)"]
         AB[Automated Backups\nDaily snapshots to secure storage]
-        GCP[GCP Singapore\nAuto-scales VMs during peak enrollment\nShuts down when traffic drops]
+        GCP[GCP Singapore\nAuto-scales VMs during peak load]
     end
 
     CF --> Nginx
     LB --> N1
     LB --> N2
-    N1 --> Redis
-    N2 --> Redis
-    Redis --> PG
+    N1 --> PG
+    N2 --> PG
     PG --> AB
     PG --> GCP
 ```
