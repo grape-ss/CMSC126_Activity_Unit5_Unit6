@@ -48,7 +48,7 @@ flowchart TD
    ![Student Dashboard](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/01d8866fbe2d7b11453a6c1617694f89e114ca47/Student%20Menu.png)
 5. **View Schedule**
    - **Tabular View**
-      ![image alt]()
+      ![Tabular Schedule](https://github.com/grape-ss/CMSC126_Activity_Unit5_Unit6/blob/bc5a48b0b7f0c8c830b3631f796a8614254ecd72/View%20Schedule%20(Tabular).png)
    - **List View**
       ![image alt]()
 6. **Grades**
