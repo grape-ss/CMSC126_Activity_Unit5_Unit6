@@ -35,7 +35,26 @@ GitHub - for code review and team collaboration
 Canva/Figma - for wireframe and mockup design
 
 ## Hosting and Deployment
+Since most hosting solutions rely on third-party infrastructure outside the University of the Philippines’ direct control, student data stored on platforms such as Render’s PostgreSQL servers resides on external systems. While this setup may be suitable for development or prototyping, a full deployment of the UPV Computerized Registration System (CRS) 2.0 would require UP Visayas to implement and manage its own server infrastructure. This ensures greater control over data security, privacy, and compliance with institutional and data protection standards.
 
+### UP Visayas On-Premise Servers + GCP (Google Cloud Platform)
+
+A hybrid infrastructure combining UP Visayas’ on-premise servers and Google Cloud Platform (GCP) is proposed to balance data sovereignty and system scalability. Sensitive student data, including personal and academic records, will be hosted on university-managed on-premise servers under the supervision of the UP ICT office to ensure compliance with institutional data governance and privacy policies. Core services such as the PostgreSQL database may be deployed locally within secure Dockerized environments, ensuring consistent runtime behavior and isolation. This is in accordance to the Data Privacy Act of 2012 (RA 10173).
+
+The application should run on physical servers managed by UP's ICT office on-campus. Each part of the system, the Next.js app, the PostgreSQL database is packaged in Docker containers, which bundle the app with everything it needs to run so it behaves consistently across any server.
+
+Incoming requests are routed through Nginx, which acts as the front door of the server, directing traffic to the correct container and handling load balancing across multiple running instances of the app.
+
+## How It Works
+
+- Requests pass through Nginx on UP Servers, which handles routing, basic security, and load balancing
+- Next.js runs Docker containers on UP servers, allowing consistent deployment and scalability during high traffic
+- PostgreSQL database remains under UP control on-premises or private instance which will be accessed securely from GCP services via private networking
+- The use of Cloud support is for:
+  - Backups and disaster recovery
+  - System monitoring and logging
+  - Optional load support during peak demand
+- For the deployment, updates are managed via GitHub and deployed to GCP services, ensuring fast and consistent releases
 ```mermaid
 flowchart TD
     Student[Student Browser]
